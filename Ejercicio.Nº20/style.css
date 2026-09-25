@@ -1,0 +1,212 @@
+/* ==========================================
+   1. VARIABLES CSS & RESET
+   ========================================== */
+:root {
+    --color-primario: #2c3e50;
+    --color-acento: #3498db;
+    --color-fondo: #f8f9fa;
+    --color-texto: #333333;
+    --espaciado: 60px 20px;
+    --radio: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Scroll suave al navegar por anclas */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   2. NAVBAR FIJA (FLEXBOX)
+   ========================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--color-acento);
+}
+
+/* ==========================================
+   3. HERO SECTION (ANIMACIÓN Y FONDO)
+   ========================================== */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/1200/800') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.hero-content {
+    animation: fadeIn 1.5s ease-out; /* Animación requerida */
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.btn-hero {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: var(--color-acento);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: var(--radio);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================
+   4. SERVICIOS (CSS GRID)
+   ========================================== */
+.services {
+    padding: var(--espaciado);
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 30px auto 0;
+}
+
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: var(--radio);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* ==========================================
+   5. TESTIMONIOS (SCROLL-SNAP CARRUSEL)
+   ========================================== */
+.testimonials {
+    padding: var(--espaciado);
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+.carousel-snap {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: var(--radio);
+}
+
+/* ==========================================
+   6. CONTACTO & FOOTER
+   ========================================== */
+.contact {
+    padding: var(--espaciado);
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--radio);
+}
+
+.btn-submit {
+    padding: 12px;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radio);
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ==========================================
+   7. MEDIA QUERIES (RESPONSIVIDAD)
+   ========================================== */
+/* Breakpoint 1: Tablets o pantallas medianas */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
+/* Breakpoint 2: Celulares */
+@media (max-width: 480px) {
+    .nav-links {
+        font-size: 14px;
+        gap: 10px;
+    }
+    .hero {
+        padding-top: 60px;
+    }
+}
