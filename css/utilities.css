@@ -1,0 +1,63 @@
+/* ==========================================================================
+   UTILIDADES Y ACCESIBILIDAD (Fase 4)
+   ========================================================================== */
+
+/* Accesibilidad para lectores de pantalla */
+.sr-only,
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip Link para navegación accesible */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--color-espresso);
+  color: var(--color-white);
+  padding: 12px 24px;
+  z-index: 100;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-ui);
+  font-weight: 500;
+  transition: top 200ms ease;
+}
+
+.skip-link:focus {
+  top: 16px;
+  outline: 3px solid var(--color-white);
+}
+
+/* Indicador universal de Foco (Focus Visible) */
+:focus-visible {
+  outline: 3px solid var(--color-maroon);
+  outline-offset: 4px;
+}
+
+/* Anular Focus visual en clics de ratón */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Transiciones globales para elementos interactivos */
+a, button, input {
+  transition: background-color 200ms ease, color 200ms ease, transform 200ms ease, border-color 200ms ease;
+}
+
+/* Desactivar animaciones si el usuario lo prefiere en su S.O. */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

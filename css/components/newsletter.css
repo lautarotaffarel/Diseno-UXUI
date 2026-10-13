@@ -1,0 +1,111 @@
+.newsletter {
+  position: relative;
+  height: 320px;
+  background-color: var(--color-sand);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.newsletter__content {
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.newsletter__title {
+  font-family: var(--font-ui);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--color-espresso);
+}
+
+.newsletter__subtitle {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-espresso);
+}
+
+.newsletter__form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.newsletter__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.newsletter__icon {
+  position: absolute;
+  left: 20px;
+  pointer-events: none;
+}
+
+.newsletter__input {
+  width: 364px;
+  height: 44px;
+  background-color: var(--color-bg);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0 20px 0 52px;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  color: var(--color-espresso);
+}
+
+.newsletter__input::placeholder {
+  color: var(--color-muted);
+}
+
+.newsletter__btn {
+  background-color: var(--color-espresso);
+  color: var(--color-bg);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 28px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+
+.newsletter__btn:hover {
+  transform: translateY(-2px);
+}
+
+.newsletter__img-left,
+.newsletter__img-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.newsletter__img-left {
+  left: 0;
+  width: 482px;
+  height: auto;
+}
+
+.newsletter__img-right {
+  right: 0;
+  width: 482px;
+  height: auto;
+  transform: translateY(-50%) scaleX(-1); /* Espejado según PRD */
+}
+
+@media (max-width: 1279px) {
+  .newsletter__img-left,
+  .newsletter__img-right { width: 260px; }
+}

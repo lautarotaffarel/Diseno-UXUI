@@ -1,0 +1,109 @@
+/* ==========================================================================
+   HEADER / NAVEGACIÓN
+   ========================================================================== */
+
+.header {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.header__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: lowercase;
+  color: var(--color-white);
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 40px;
+}
+
+.header__link {
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-white);
+  transition: opacity 200ms ease;
+}
+
+.header__link:hover,
+.header__link--login {
+  font-weight: 600;
+}
+
+.header__search-btn {
+  width: 61px;
+  height: 61px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   Soporte Responsive y Menú Mobile (<details>/<summary>)
+   -------------------------------------------------------------------------- */
+
+.header__menu-toggle {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .header {
+    top: 24px;
+  }
+
+  .header__container {
+    padding: 0 20px;
+  }
+
+  .header__menu-toggle {
+    display: block;
+    cursor: pointer;
+    color: var(--color-white);
+    font-size: 28px;
+    user-select: none;
+  }
+
+  /* Ocultar el nav convencional en pantallas chicas */
+  .header__nav {
+    display: none;
+  }
+
+  /* Desplegar el menú cuando el <details> está abierto */
+  .header__menu-toggle[open] .header__nav {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-espresso);
+    padding: 24px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .header__nav-list {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
