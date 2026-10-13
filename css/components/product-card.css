@@ -1,0 +1,104 @@
+.products {
+  padding: 100px 0;
+  background-color: var(--color-bg);
+}
+
+.products__title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.28px;
+  color: var(--color-espresso);
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.product-card {
+  flex: 0 0 366px;
+  height: 570px;
+  background-color: var(--color-sand-20);
+  border: 1.5px solid var(--color-sand);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+.product-card__image-container {
+  position: relative;
+  width: 334px;
+  height: 364px;
+  border-radius: var(--radius-img);
+  overflow: hidden;
+}
+
+.product-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.product-card:hover .product-card__img {
+  transform: scale(1.03);
+}
+
+.product-card__fav-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 33px;
+  height: 33px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.product-card__title {
+  font-family: var(--font-body);
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--color-espresso);
+}
+
+.product-card__desc {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--color-maroon);
+}
+
+.product-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.product-card__price {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-espresso);
+}
+
+.product-card__btn {
+  background-color: var(--color-maroon);
+  color: var(--color-white);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 26px;
+  border-radius: var(--radius-btn);
+  border: none;
+  cursor: pointer;
+  transition: opacity 200ms ease;
+}
+
+.product-card__btn:hover {
+  opacity: 0.9;
+}

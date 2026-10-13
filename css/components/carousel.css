@@ -1,0 +1,20 @@
+.carousel-wrapper {
+  max-width: 1476px; /* Ancho para 4 cards de 366px + gaps de 4px */
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.carousel {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Oculta la barra de scroll en Chrome/Safari */
+}

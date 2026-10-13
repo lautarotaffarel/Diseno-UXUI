@@ -1,0 +1,138 @@
+/* Layout Global y Contenedores */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+/* --- RESPONSIVE POR SECCIÓN --- */
+
+/* Mobile Base (360px - 767px) */
+@media (max-width: 767px) {
+  /* Hero */
+  .hero {
+    height: auto;
+    min-height: 640px;
+    padding: 120px 20px 60px;
+  }
+
+  .hero__box {
+    margin-left: 0;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: clamp(2.2rem, 1rem + 5vw, 3.5rem);
+    line-height: 1.2;
+  }
+
+  /* Categorías en Grid 2x2 */
+  .categories {
+    height: auto;
+    padding: 40px 16px;
+  }
+
+  .categories__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  /* Carruseles con swipe nativo */
+  .carousel-wrapper {
+    padding: 0 16px;
+  }
+
+  /* Promo / CTA */
+  .promo {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .promo__img-left,
+  .promo__img-right {
+    display: none; /* Se ocultan imágenes decorativas en mobile */
+  }
+
+  /* Testimonios */
+  .testimonials__grid {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  .testimonial-card,
+  .testimonial-card--featured {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    height: auto;
+    padding: 60px 20px;
+  }
+
+  .newsletter__form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .newsletter__input-wrapper,
+  .newsletter__input,
+  .newsletter__btn {
+    width: 100%;
+  }
+
+  .newsletter__img-left,
+  .newsletter__img-right {
+    display: none;
+  }
+
+  /* Footer */
+  .footer__container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer__columns {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero__box {
+    margin-left: 0;
+  }
+
+  .categories__list {
+    width: 100%;
+    padding: 0 32px;
+  }
+
+  .footer__columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
