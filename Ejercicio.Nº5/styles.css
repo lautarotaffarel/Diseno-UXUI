@@ -1,0 +1,12 @@
+/* Cambiar tipografía, color de fondo y color de texto global */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333333;
+}
+
+/* Modificar tamaño de fuente y color del h1 */
+h1 {
+    font-size: 32px;
+    color: #1a5276;
+}

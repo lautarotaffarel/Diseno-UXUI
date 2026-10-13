@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Barra de navegación usando Flexbox */
+.navbar {
+    display: flex; /* Activa el modelo Flexbox */
+    justify-content: space-between; /* Empuja el logo a la izquierda y los links a la derecha */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    background-color: #1a252f;
+    padding: 15px 30px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Lista de enlaces en fila mediante Flexbox */
+.nav-links {
+    display: flex; /* Pone los <li> en fila horizontal */
+    list-style: none; /* Quita los viñetas de la lista */
+    gap: 20px; /* Espaciado entre cada enlace */
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none; /* Quita el subrayado predeterminado */
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #3498db; /* Efecto visual al pasar el cursor */
+}

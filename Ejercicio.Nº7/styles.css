@@ -1,0 +1,39 @@
+/* Aplicación explícita de box-sizing: border-box a todos los elementos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+/* Contenedor principal para disponer las tarjetas en fila */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Estilos de las tarjetas (Box Model) */
+.card {
+    width: 30%; /* Tamaño flexible */
+    padding: 20px; /* Espacio interno */
+    border: 3px solid #3498db; /* Borde visible */
+    margin: 5px; /* Espacio externo */
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+.card h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #555555;
+    font-size: 14px;
+}

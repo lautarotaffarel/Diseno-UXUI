@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 15px 20px;
+    position: relative;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Ocultar el checkbox completamente */
+.menu-checkbox {
+    display: none;
+}
+
+/* Estilo del botón hamburguesa */
+.hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger-btn span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+/* Estilos base del menú (Mobile First) */
+.nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #34495e;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid #2c3e50;
+}
+
+.nav-menu li a:hover {
+    background-color: #2980b9;
+}
+
+/* TRUCO: Cuando el checkbox está marcado (:checked), expandimos el menú usando el selector hermano ~ */
+.menu-checkbox:checked ~ .nav-menu {
+    max-height: 250px;
+}
+
+/* Adaptación para pantallas de escritorio */
+@media (min-width: 768px) {
+    .hamburger-btn {
+        display: none; /* Oculta la hamburguesa en PC */
+    }
+
+    .nav-menu {
+        position: static;
+        max-height: none;
+        width: auto;
+        background-color: transparent;
+        overflow: visible;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    .nav-menu li a {
+        padding: 0;
+        border-bottom: none;
+    }
+}

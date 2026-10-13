@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19 - Formulario Multi-step</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="form-container">
+        <h2>Registro de Usuario</h2>
+
+        <form action="#" method="POST" class="multistep-form">
+            <!-- Radio buttons ocultos para controlar la navegación entre pasos -->
+            <input type="radio" name="step" id="step1" checked class="step-radio">
+            <input type="radio" name="step" id="step2" class="step-radio">
+
+            <!-- Indicador de progreso -->
+            <div class="step-indicators">
+                <span class="indicator ind-1">1</span>
+                <span class="indicator ind-2">2</span>
+            </div>
+
+            <!-- Paso 1: Datos Personales -->
+            <fieldset class="step-content content-1">
+                <legend>Paso 1: Datos Personales</legend>
+
+                <div class="field">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="field">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                </div>
+
+                <label for="step2" class="btn btn-next">Siguiente →</label>
+            </fieldset>
+
+            <!-- Paso 2: Cuenta y Contraseña -->
+            <fieldset class="step-content content-2">
+                <legend>Paso 2: Datos de Cuenta</legend>
+
+                <div class="field">
+                    <label for="usuario">Nombre de Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required minlength="4">
+                </div>
+
+                <div class="field">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required minlength="6">
+                </div>
+
+                <div class="btn-group">
+                    <label for="step1" class="btn btn-prev">← Anterior</label>
+                    <button type="submit" class="btn btn-submit">Finalizar Registro</button>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+
+</body>
+</html>

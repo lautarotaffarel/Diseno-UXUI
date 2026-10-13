@@ -1,0 +1,76 @@
+/* Declaración de variables CSS en :root */
+:root {
+    --color-fondo: #f4f6f8;
+    --color-tarjeta: #ffffff;
+    --color-texto: #2c3e50;
+    --color-primario: #3498db;
+    --color-hover: #2980b9;
+    --borde-color: #e0e0e0;
+    --espaciado-base: 20px;
+    --radio-borde: 8px;
+}
+
+/* Simulación de Modo Oscuro al cambiar las variables generales */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-fondo: #1e1e2e;
+        --color-tarjeta: #2a2a3c;
+        --color-texto: #ecf0f1;
+        --color-primario: #5dade2;
+        --color-hover: #3498db;
+        --borde-color: #3b3b52;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Uso de var() en al menos 5 propiedades distintas */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: var(--espaciado-base);
+}
+
+.card {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--borde-color);
+    border-radius: var(--radio-borde);
+    padding: var(--espaciado-base);
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: var(--espaciado-base);
+    color: var(--color-primario);
+}
+
+p {
+    margin-bottom: var(--espaciado-base);
+    line-height: 1.5;
+}
+
+.btn {
+    background-color: var(--color-primario);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radio-borde);
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--color-hover);
+}
